@@ -1,0 +1,11 @@
+## flowchart
+```mermaid
+graph TD
+Start((START)) --> |create order| Pending[Pending Payments]
+Pending--> |processing| Processing[Processing]
+Pending --> |cancelled| Cancelled[Cancelled]
+Processing --> Completed[Completed]
+Pending --> |cancelled|Processing
+Completed --> |completed| End((End))
+Cancelled --> |completed | End 
+```
