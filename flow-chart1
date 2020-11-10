@@ -1,11 +1,11 @@
-## flowchart
-```mermaid
-graph TD
-Start((START)) --> |create order| Pending[Pending Payments]
-Pending--> |processing| Processing[Processing]
-Pending --> |cancelled| Cancelled[Cancelled]
-Processing --> Completed[Completed]
-Pending --> |cancelled|Processing
-Completed --> |completed| End((End))
-Cancelled --> |completed | End 
-```
+graph LR
+Start((fa:fa-play<br> START)) --> PendingPayments[Pending Payments<br> Order:Open<br>Invoice: X<br>Delivery: X]
+PendingPayments-->Processing[Processing <br>Order:Closed<br>Invoice: Open<br>Delivery: X]
+Processing --> Cancelled[Cancelled <br>Order:Closed<br>Invoice: Closed<br>Delivery: Closed]
+Processing --> Completed[Completed <br>Order:closed<br>Invoice: Closed<br>Delivery: Closed]
+PendingPayments --> Cancelled
+Completed --> End((fa:fa-stop <br>End))
+Cancelled --> End
+
+style Start fill:#00758f
+style End fill:red
