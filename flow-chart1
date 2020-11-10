@@ -1,3 +1,4 @@
+<div class="mermaid">
 graph LR
 Start((fa:fa-play<br> START)) --> PendingPayments[Pending Payments<br> Order:Open<br>Invoice: X<br>Delivery: X]
 PendingPayments-->Processing[Processing <br>Order:Closed<br>Invoice: Open<br>Delivery: X]
@@ -9,3 +10,4 @@ Cancelled --> End
 
 style Start fill:#00758f
 style End fill:red
+</div>
